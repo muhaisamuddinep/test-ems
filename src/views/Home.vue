@@ -142,12 +142,12 @@ export default {
   data: () => ({
     username: '',
     password: '',
-    url: 'http://localhost:3000',
+    url: 'http://localhost:3000/',
     items: [
-      'http://localhost:3000',
+      'http://localhost:3000/',
       'https://dev-biller-agregator.air.id/web/bot/autologin/',
       'https://stage-biller-agregator.air.id/web/bot/autologin/',
-    ],
+    ]
     keyName: '',
     params: {},
     menu: false,
