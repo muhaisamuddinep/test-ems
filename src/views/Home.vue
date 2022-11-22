@@ -147,7 +147,7 @@ export default {
       'http://localhost:3000/',
       'https://dev-biller-agregator.air.id/web/bot/autologin/',
       'https://stage-biller-agregator.air.id/web/bot/autologin/',
-    ]
+    ],
     keyName: '',
     params: {},
     menu: false,
