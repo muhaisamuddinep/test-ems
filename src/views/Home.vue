@@ -108,7 +108,7 @@
             <v-card class="my-2">
               <v-card-title>params</v-card-title>
               <v-card-text>
-                {{params}}
+                {{ params }}
               </v-card-text>
             </v-card>
             <v-card>
@@ -145,8 +145,8 @@ export default {
     url: 'http://localhost:3000/',
     items: [
       'http://localhost:3000/',
-      'https://dev-biller-agregator.air.id/web/bot/autologin/',
-      'https://stage-biller-agregator.air.id/web/bot/autologin/',
+      'https://dev-biller-agregator.air.id/web/bot/',
+      'https://stage-biller-agregator.air.id/web/bot/',
     ],
     keyName: '',
     params: {},
@@ -158,7 +158,10 @@ export default {
   methods: {
     login() {
       if (this.url) {
-        const url = this.url + encodeURIComponent(this.encryptText({username: this.username, password: this.password}))
+        const url = this.url + "autologin/" + encodeURIComponent(this.encryptText({
+          username: this.username,
+          password: this.password
+        }))
         window.open(url, "_blank")
       } else alert("Silakan pilih URL terlebih dahulu")
     },
