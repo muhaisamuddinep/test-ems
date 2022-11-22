@@ -2,7 +2,7 @@
   <div class="home">
     <v-row class="pa-6">
       <v-col cols="6">
-        <v-form @submit.prevent="login">]
+        <v-form @submit.prevent="login">
           <v-card class="pa-6">
             <v-select
                 :items="items"
