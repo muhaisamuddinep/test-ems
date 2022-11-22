@@ -2,6 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
+import JsonViewer from 'vue-json-viewer'
+
+// Import JsonViewer as a Vue.js plugin
+Vue.use(JsonViewer)
+
 
 Vue.config.productionTip = false
 

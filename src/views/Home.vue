@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <v-form @submit.prevent="encryptParams">
-      <v-row class="pa-6">
-        <v-col cols="6">
+    <v-row class="pa-6">
+      <v-col cols="6">
+        <v-form @submit.prevent="login">]
           <v-card class="pa-6">
             <v-select
                 :items="items"
@@ -15,8 +15,10 @@
             <v-text-field type="password" outlined v-model="password" label="Password" placeholder="Password"/>
             <v-btn type="submit" shaped>Login</v-btn>
           </v-card>
-        </v-col>
-        <v-col cols="6">
+        </v-form>
+      </v-col>
+      <v-col cols="6">
+        <v-form @submit.prevent="encryptParams">
           <v-card class="pa-6">
             <v-card-title>
               <div style="width: 100% !important; max-width: 100% !important;" class="d-flex align-center">
@@ -105,7 +107,9 @@
             </v-card-text>
             <v-card class="my-2">
               <v-card-title>params</v-card-title>
-              <v-card-text>{{ params }}</v-card-text>
+              <v-card-text>
+                {{params}}
+              </v-card-text>
             </v-card>
             <v-card>
               <v-card-title>resultEncrypt</v-card-title>
@@ -121,18 +125,20 @@
               </v-card-text>
             </v-card>
           </v-card>
-        </v-col>
-      </v-row>
-    </v-form>
+        </v-form>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import 'vue-json-viewer/style.css'
 // @ is an alias to /src
 const CryptoJS = require("crypto-js")
 
 export default {
   name: 'Home',
+  components: {},
   data: () => ({
     username: '',
     password: '',
@@ -173,6 +179,7 @@ export default {
       this.params[this.keyName] = ''
       this.keyName = ''
       this.menu = false
+      this.$forceUpdate()
     },
     deleteParams(key) {
       delete this.params[key]
